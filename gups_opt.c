@@ -51,7 +51,7 @@ typedef unsigned long long u64Int;
 
 void sort_data (u64Int *source, u64Int *nomatch, u64Int *match, int number, 
 		int *nnomatch, int *nmatch, int mask_shift);
-inline update_table (u64Int *data, u64Int *table, int number, int nlocalm1);
+void update_table (u64Int *data, u64Int *table, int number, int nlocalm1);
 u64Int HPCC_starts(s64Int n);
 
 int main(int narg, char **arg)
@@ -349,7 +349,7 @@ void sort_data(u64Int *source, u64Int *nomatch, u64Int *match, int number,
   *nmatch = counts[1];
 }
 
-inline update_table(u64Int *data, u64Int *table, int number, int nlocalm1)
+void update_table(u64Int *data, u64Int *table, int number, int nlocalm1)
 {
 /* DEEP_UNROLL doesn't seem to improve anything at this time */
 /* Manual unrolling is a significant win if -Msafeptr is used -KDU */

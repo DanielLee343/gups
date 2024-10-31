@@ -1,0 +1,6 @@
+
+gups_vanilla:555837 terminated with signal 11 at PC=555555555a96 SP=7fffffffdd90.  Backtrace:
+./gups_vanilla(+0x1a96)[0x555555555a96]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x7ffff57abd90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x7ffff57abe40]
+./gups_vanilla(+0x1265)[0x555555555265]
