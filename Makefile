@@ -14,13 +14,13 @@ all: gups_vanilla gups_nonpow2 gups_opt
 # Link targets
 
 gups_vanilla: gups_vanilla.o
-	$(LINK) $(OPT_FLAGS) -g gups_vanilla.o -lmpich -o gups_vanilla
+	$(LINK) $(COMMON_FLAGS) -g gups_vanilla.o -lmpich -o gups_vanilla
 
 gups_nonpow2: gups_nonpow2.o
-	$(LINK) $(OPT_FLAGS) -g gups_nonpow2.o -o gups_nonpow2
+	$(LINK) $(COMMON_FLAGS) -g gups_nonpow2.o -o gups_nonpow2
 
 gups_opt: gups_opt.o
-	$(LINK) $(OPT_FLAGS) -g gups_opt.o -o gups_opt
+	$(LINK) $(COMMON_FLAGS) -g gups_opt.o -o gups_opt
 
 # Compilation rules
 

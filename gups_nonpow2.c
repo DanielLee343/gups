@@ -42,7 +42,8 @@ int main(int narg, char **arg)
 {
   int me,nprocs;
   int i,iterate,niterate;
-  int nlocal,logtable,index;
+  unsigned int nlocal;
+  int logtable,index;
   int ipartner,ndata,nsend,nkeep,nrecv,maxndata,maxnfinal,nexcess;
   int nbad,chunk,chunkbig,npartition,nlower,nupper,proclo,procmid,nfrac;
   double t0,t0_all,Gups;
@@ -89,7 +90,10 @@ int main(int narg, char **arg)
 
   chunkbig = 16*chunk;
 
-  table = (u64Int *) malloc(nlocal*sizeof(u64Int));
+  // table = (u64Int *) malloc(nlocal*sizeof(u64Int));
+  size_t table_size = (size_t)nlocal * sizeof(u64Int); // Use size_t for table_size
+  // printf("table_size: %zu bytes\n", table_size);
+  table = (u64Int *)malloc(table_size);
   data = (u64Int *) malloc(chunkbig*sizeof(u64Int));
   send = (u64Int *) malloc(chunkbig*sizeof(u64Int));
 
